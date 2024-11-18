@@ -1,0 +1,244 @@
+/* ------- Google Font -------- */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* ------ Variable Management ------ */
+
+:root {
+  /* Color Palette */
+  --primary: #3498db;
+  --vibrant: #e74c3c;
+  --tomatoRed: #c0392b;
+  --gray-dark: #34495e;
+  --gray-light: #ecf0f1;
+  --gray: #7f8c8d;
+  --dark: rgb(43, 61, 79);
+  --light: #ecf0f1;
+  --white: #fff;
+
+  /* Typography */
+  --font-mont: "Montserrat", sans-serif;
+  --size-small: 0.75rem; /* 12px */
+  --size-medium: 1rem; /* 16px */
+  --size-large: 1.5rem; /* 24px */
+  --weight-normal: 400;
+  --weight-bold: 700;
+
+  /* Spacing & Sizing */
+  /* https://nekocalc.com/px-to-rem-converter */
+  --spacing-small: 0.5rem; /* 8px */
+  --spacing-medium: 1rem; /* 16px */
+  --spacing-large: 1.25rem; /* 20px */
+  --spacing-xlarge: 1.5rem; /* 24px */
+  --spacing-xxlarge: 2rem; /* 32px */
+  --spacing-xxxlarge: 3.125rem; /* 50px */
+}
+
+/* --------- Reset Styles --------- */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation on mobile devices */
+html {
+  text-size-adjust: 100%;
+}
+
+/* Remove default margin for better control */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* body */
+body {
+  font-family: var(--font-mont);
+  background-image: url("./assets/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  /* background-blend-mode: multiply; */
+  line-height: var(--size-large);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* -------- Container Styles -------- */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: var(--spacing-medium);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  padding: var(--spacing-large) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  border-radius: 50%;
+  width: var(--spacing-xxxlarge);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-link a {
+  color: var(--light);
+  text-decoration: none;
+  /*  */
+  margin-left: var(--spacing-large); 
+  font-weight: bold;
+}
+
+.nav-link a:hover {
+  text-decoration: underline;
+}
+
+/* Search Form */
+.search {
+  display: flex;
+}
+
+.search input[type="text"] {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid var(--gray-light);
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.search button {
+  padding: var(--size-small) var(--size-medium);
+  font-size: var(--size-medium);
+  background-color: var(--vibrant);
+  color: var(--light);
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.search button:hover {
+  background-color: var(--tomatoRed);
+}
+
+/* Content Section */
+.content {
+  color: var(--light);
+  padding: 40px;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: rgb(43 61 79 / 0.5);
+  border-radius: 20px;
+}
+
+.content h2 {
+  font-size: var(--size-large);
+}
+
+.content p {
+  font-size: var(--size-small);
+  line-height: 1.6;
+}
+
+/* Footer Styles */
+.footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: var(--light);
+  gap: var(--size-medium);
+  padding: var(--size-small);
+  text-align: center;
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--size-large);
+}
+
+.social-media a {
+  color: var(--light);
+}
+
+.social-media a:hover {
+  color: var(--primary);
+  font: var(--bold);
+  transition: color 0.3s ease-in-out;
+}
+
+.att {
+  font-size: var(--size-medium);
+  color: var(--light);
+}
+
+.att a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.att a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  font-size: var(--size-medium);
+  color: var(--light);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-link {
+    margin: 10px 0;
+  }
+
+  .search {
+    margin-top: var(--size-small);
+  }
+
+  .content {
+    padding: var(--spacing-large);
+  }
+}
+
+/* Scroll margin for anchored elements */
+:target {
+  scroll-margin-block: var(--spacing-large);
+}
